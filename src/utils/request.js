@@ -22,7 +22,7 @@ service.interceptors.request.use(config => {
       showLoading()
     }
     if (store.getters.token) {
-      config.headers['x-token'] = getToken()
+      config.headers['Authorization'] = getToken()
     }
     if (config.headers['Content-Type'] == 'application/x-www-form-urlencoded') {
       config.data = qs.stringify(config.data)

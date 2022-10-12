@@ -53,6 +53,7 @@ const actions = {
           reject('数据出错，请重新登录')
         }
         data.avatar = 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3091443174,2723539724&fm=26&gp=0.jpg'
+        data.roles = 'admin'
         if (data.roles && !Array.isArray(data.roles)) {
           data.roles = [data.roles]
         }

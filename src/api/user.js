@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/login',
+    url: '/user/login',
     method: 'post',
     data
   })
@@ -10,7 +10,14 @@ export function login(data) {
 
 export function getInfo() {
   return request({
-    url: '/user/myinfo',
+    url: '/user/info',
+    method: 'post'
+  })
+}
+
+export function logout() {
+  return request({
+    url: '/user/logout',
     method: 'post'
   })
 }
@@ -74,13 +81,6 @@ export function modifyPassword(oldPassword,newPassword) {
       oldPassword,
       newPassword
     }
-  })
-}
-
-export function logout() {
-  return request({
-    url: '/logout',
-    method: 'post'
   })
 }
 

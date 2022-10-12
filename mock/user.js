@@ -10,10 +10,10 @@ const users = {
     dealerName: '老大哥有限公司',
     sex: 1
   },
-  '15257178923-dealer': {
+  '1525717-dealer': {
     roles: 'dealer',
     avatar: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3091443174,2723539724&fm=26&gp=0.jpg',
-    username: '15257178923',
+    username: '1525717',
     realName: '王也',
     dealerId: 2,
     dealerName: '八绝技有限公司',
@@ -30,8 +30,8 @@ export default [
       let token
       if (username == '17682315369' && password == '123456') {
         token = '17682315369-admin'
-      } else if (username == '15257178923' && password == '123456') {
-        token = '15257178923-dealer'
+      } else if (username == '1525717' && password == '123456') {
+        token = '1525717-dealer'
       }
       if (!token) {
         return { code: 400, message: '用户名密码不正确' }
