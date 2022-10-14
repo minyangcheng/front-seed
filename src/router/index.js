@@ -48,8 +48,8 @@ export const constantRoutes = [
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: '地图', icon: 'dashboard' }
+      component: () => import('@/views/dashboard/main'),
+      meta: { title: '主页', icon: 'dashboard' }
     }]
   }
 ]
@@ -74,84 +74,97 @@ export const asyncRoutes = [
     ]
   },
   {
-    path: '/salesroom',
+    path: '/order',
     component: Layout,
-    name: 'Salesroom',
-    redirect: '/salesroom/index',
-    meta: { title: '门店', icon: 'example', roles: ['admin', 'dealer'] },
+    meta: { title: '订单管理', icon: 'example', roles: ['admin'] },
     children: [
       {
-        path: 'index',
-        name: 'SaleRoomManager',
-        component: () => import('@/views/salesroom/index'),
-        meta: { title: '门店', icon: 'form' }
-      },
-      {
-        path: 'detail',
-        name: 'SaleRoomDetail',
-        component: () => import('@/views/salesroom/detail'),
-        meta: { title: '门店详情', icon: 'form' },
-        hidden: true
+        path: '',
+        name: 'OrderManager',
+        component: () => import('@/views/order/index'),
+        meta: { title: '订单管理', icon: 'form' }
       }
     ]
   },
-  {
-    path: '/area',
-    component: Layout,
-    name: 'Area',
-    redirect: '/area/index',
-    meta: { title: '区域', icon: 'example' },
-    children: [
-      {
-        path: 'index',
-        name: 'AreaQuery',
-        component: () => import('@/views/area/index'),
-        meta: { title: '区域查询', icon: 'form' }
-      }
-    ]
-  },
-  {
-    path: '/chain',
-    component: Layout,
-    name: 'Chain',
-    redirect: 'noRedirect',
-    meta: { title: '系统', icon: 'example'},
-    children: [
-      {
-        path: 'index',
-        name: 'ChainManager',
-        component: () => import('@/views/chain/index'),
-        meta: { title: '系统审批', icon: 'form' ,roles: ['admin']}
-      },
-      {
-        path: 'apply',
-        name: 'Apply',
-        component: () => import('@/views/chain/apply'),
-        meta: { title: '系统管理', icon: 'form' ,roles: ['dealer']}
-      }
-    ]
-  },
-  {
-    path: '/setting',
-    component: Layout,
-    name: 'Setting',
-    redirect: 'noRedirect',
-    meta: { title: '设置', icon: 'example' },
-    children: [
-      // {
-      //   path: 'complaint',
-      //   name: 'Complaint',
-      //   component: () => import('@/views/setting/complaint'),
-      //   meta: { title: '投诉建议', icon: 'form', roles: ['admin', 'dealer'] }
-      // },
-      {
-        path: 'message',
-        name: 'Message',
-        component: () => import('@/views/setting/message'),
-        meta: { title: '公告', icon: 'form', roles: ['admin'] }
-      }
-    ]
-  },
+  // {
+  //   path: '/salesroom',
+  //   component: Layout,
+  //   name: 'Salesroom',
+  //   redirect: '/salesroom/index',
+  //   meta: { title: '门店', icon: 'example', roles: ['admin', 'dealer'] },
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'SaleRoomManager',
+  //       component: () => import('@/views/salesroom/index'),
+  //       meta: { title: '门店', icon: 'form' }
+  //     },
+  //     {
+  //       path: 'detail',
+  //       name: 'SaleRoomDetail',
+  //       component: () => import('@/views/salesroom/detail'),
+  //       meta: { title: '门店详情', icon: 'form' },
+  //       hidden: true
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/area',
+  //   component: Layout,
+  //   name: 'Area',
+  //   redirect: '/area/index',
+  //   meta: { title: '区域', icon: 'example' },
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'AreaQuery',
+  //       component: () => import('@/views/area/index'),
+  //       meta: { title: '区域查询', icon: 'form' }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/chain',
+  //   component: Layout,
+  //   name: 'Chain',
+  //   redirect: 'noRedirect',
+  //   meta: { title: '系统', icon: 'example'},
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'ChainManager',
+  //       component: () => import('@/views/chain/index'),
+  //       meta: { title: '系统审批', icon: 'form' ,roles: ['admin']}
+  //     },
+  //     {
+  //       path: 'apply',
+  //       name: 'Apply',
+  //       component: () => import('@/views/chain/apply'),
+  //       meta: { title: '系统管理', icon: 'form' ,roles: ['dealer']}
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/setting',
+  //   component: Layout,
+  //   name: 'Setting',
+  //   redirect: 'noRedirect',
+  //   meta: { title: '设置', icon: 'example' },
+  //   children: [
+  //     // {
+  //     //   path: 'complaint',
+  //     //   name: 'Complaint',
+  //     //   component: () => import('@/views/setting/complaint'),
+  //     //   meta: { title: '投诉建议', icon: 'form', roles: ['admin', 'dealer'] }
+  //     // },
+  //     {
+  //       path: 'message',
+  //       name: 'Message',
+  //       component: () => import('@/views/setting/message'),
+  //       meta: { title: '公告', icon: 'form', roles: ['admin'] }
+  //     }
+  //   ]
+  // },
   { path: '*', redirect: '/404', hidden: true }
 ]
 

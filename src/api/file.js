@@ -18,12 +18,14 @@ export function uploadFileOnStore(fileObj) {
 
 export function uploadFileOnSystem(fileObj) {
   const param = new FormData()
-  param.append('file', fileObj.file)
-  Object.keys(fileObj.data).forEach(item => {
-    param.append(item, fileObj.data[item])
-  })
+  param.append('files', fileObj.file)
+  if(fileObj.data){
+    Object.keys(fileObj.data).forEach(item => {
+      param.append(item, fileObj.data[item])
+    })
+  }
   return request({
-    url: '/system/upload',
+    url: '/file/upload',
     method: 'post',
     timeout: 30000,
     headers: { 'Content-Type': 'multipart/form-data' },

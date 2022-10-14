@@ -20,9 +20,6 @@
           <el-dropdown-item divided>
             <span style="display:block;" @click="modifyPassword">修改密码</span>
           </el-dropdown-item>
-          <el-dropdown-item divided v-if="userInfo.username == 'root'">
-            <span style="display:block;" @click="formatSystem">格式化</span>
-          </el-dropdown-item>
           <el-dropdown-item divided>
             <span style="display:block;" @click="logout">注销</span>
           </el-dropdown-item>
@@ -182,16 +179,16 @@
       }
     },
     created() {
-      getMessageList(1, 1).then(res => {
-        if (res.data.list && res.data.list.length > 0) {
-          this.dialogNoticeVisible = true
-          this.notice.message = res.data.list[0].message
-          setTimeout(() => {
-            this.dialogNoticeVisible = false
-          }, 30000)
-        }
-      }).catch(err => {
-      })
+      // getMessageList(1, 1).then(res => {
+      //   if (res.data.list && res.data.list.length > 0) {
+      //     this.dialogNoticeVisible = true
+      //     this.notice.message = res.data.list[0].message
+      //     setTimeout(() => {
+      //       this.dialogNoticeVisible = false
+      //     }, 30000)
+      //   }
+      // }).catch(err => {
+      // })
     }
   }
 </script>
