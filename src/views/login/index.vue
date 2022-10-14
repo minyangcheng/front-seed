@@ -4,7 +4,7 @@
              label-position="left">
 
       <div class="title-container">
-        <h3 class="title">代理商管理系统</h3>
+        <h3 class="title">后台管理系统</h3>
       </div>
 
       <el-form-item prop="username">

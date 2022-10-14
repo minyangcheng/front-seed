@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '代理商管理系统',
+  title: '后台管理系统',
 
   /**
    * @type {boolean} true | false
